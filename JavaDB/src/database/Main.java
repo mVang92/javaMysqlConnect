@@ -8,9 +8,29 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		// Calling getConnection function requires throws Exception for main method
-//		getConnection();
+		// getConnection();
 		// Call the createTable function directly
 		createTable();
+		
+		post();
+	}
+
+	// Inserting data into table
+	public static void post() throws Exception {
+		final String firstName1 = "Abby";
+		final String lastName1 = "Smith";
+		final String email1 = "abby.smith@gmail.com";
+		try {
+			Connection con = getConnection();
+			PreparedStatement posted = con
+					.prepareStatement("INSERT INTO customers (firstName, lastName, email) VALUES ('" + firstName1
+							+ "','" + lastName1 + "', '" + email1 + "')");
+			posted.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			System.out.println("Insert success");
+		}
 	}
 
 	// Creating a table
@@ -25,7 +45,6 @@ public class Main {
 			// Run the query assigned to create
 			create.executeUpdate();
 		} catch (Exception e) {
-
 			System.out.println(e);
 		} finally {
 			System.out.println("Query ran successfully.");
