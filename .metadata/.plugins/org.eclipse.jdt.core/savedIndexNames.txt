@@ -1,0 +1,2 @@
+INDEX VERSION 1.130+E:\Web Projects\javaMysqlConnect\.metadata\.plugins\org.eclipse.jdt.core
+3017952843.index
