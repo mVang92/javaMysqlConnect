@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		// Calling getConnection function requires throws exception for main method
+		// Calling getConnection function requires throws Exception for main method
 		getConnection();
 	}
 	
@@ -14,7 +14,7 @@ public class Main {
 	// Import Connection and add return statement
 	public static Connection getConnection() throws Exception {
 		try {
-			String driver = "com.mysql.jdbc.Driver";
+			String driver = "com.mysql.cj.jdbc.Driver";
 			// CREATE DATABASE javaDB and USE javaDB in MySQL Workbench
 			String url = "jdbc:mysql://localhost:3306/javaDB";
 			// My credentials in MySQL Workbench
